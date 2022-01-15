@@ -1,0 +1,45 @@
+.start-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(66, 64, 64);
+    height: 100vh;
+}
+
+.description{
+    color: white;
+    font-size: 50px;
+}
+
+.start{
+    text-decoration: none;
+    color: white;
+}
+
+.start-container button{
+    padding: 10px 50px;
+    outline: none;
+    border: none;
+    background-color: rgb(54, 160, 196);
+}
+
+.start-container button:hover{
+    background-color: lightblue;
+}
+
+.homeBtn{
+    border-radius: 30px;
+    padding: 10px 40px;
+    color: white;
+    background: rgb(56, 56, 204);
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+    transition: 0.1s linear;
+}
+
+.homeBtn:hover{
+    background-color: rgb(106, 106, 209);
+}

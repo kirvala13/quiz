@@ -1,0 +1,45 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "ერთპასუხიანი კითხვა",
+      "options": [
+        {"სავარაუდოპასუხი":1, "correct":true},
+        {"სავარაუდოპასუხი":2, "correct":false},
+        {"სავარაუდოპასუხი":3, "correct":false},
+        {"სავარაუდოპასუხი":4, "correct":false}
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multiple",
+      "question": "მრავალპასუხიანი კითხვა",
+      "options": [
+        {"სავარაუდოპასუხი":2, "correct":false},
+        {"სავარაუდოპასუხი":4, "correct":false},
+        {"სავარაუდოპასუხი":1, "correct":true},
+        {"სავარაუდოპასუხი":3, "correct":true}
+      ]
+    },
+    {
+      "id": 3,
+      "type": "boolean",
+      "question": "დისკრეტული კითხვა",
+      "options": [
+        {"სავარაუდოპასუხი":2, "correct":false},
+        {"სავარაუდოპასუხი":3, "correct":true}
+      ]
+    }, {
+      "id": 4,
+      "type": "single",
+      "question": "ერთპასუხიანი კითხვა",
+      "options": [
+        {"სავარაუდოპასუხი":1, "correct":false},
+        {"სავარაუდოპასუხი":2, "correct":true},
+        {"სავარაუდოპასუხი":3, "correct":false},
+        {"სავარაუდოპასუხი":4, "correct":false}
+      ]
+    }
+  ]
+}

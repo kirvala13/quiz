@@ -1,0 +1,39 @@
+.history-page{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to left, #333, #333 50%, rgb(117, 114, 114) 75%, #333 75%);
+    height: 100vh;
+}
+.history-page h1{
+    color: white;
+}
+.result-container{
+    margin-top: 30px;
+}
+table, td, th {
+    border: 1px solid black;
+    color: white;
+  }
+  table {
+    width: 500px;
+    border-collapse: collapse;
+  }
+
+.homeBtn{
+    border-radius: 30px;
+    padding: 10px 40px;
+    color: white;
+    background: rgb(56, 56, 204);
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+    transition: 0.1s linear;
+}
+
+.homeBtn:hover{
+    background-color: rgb(106, 106, 209);
+}
