@@ -31,7 +31,7 @@ function QuizProp({ data, click, loading, answear }) {
     }
     const nextbtn = () => {
         click()
-        setNextBtn(true)
+        setNextBtn(false)
         setShow(false)
         if(data.type==='multiple'){
             setRame(false)
@@ -46,7 +46,7 @@ function QuizProp({ data, click, loading, answear }) {
                 <div className="answer">
                     {rame ? data.options.map(res => {
                         return <p className="answer-button" key={res} onClick={() => clickHendler(res)}>{res}</p>
-                    }) : <Bool loading={loading} data={data} show={show} answear={answear} />}
+                    }) : <Bool loading={loading} data={data} show={show} answear={answear} clik={()=>click()} />}
                 </div> </> : null
             }
             {nextBtn ? <button onClick={nextbtn}>next</button> : null}

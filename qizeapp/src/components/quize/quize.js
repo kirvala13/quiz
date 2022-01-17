@@ -27,7 +27,7 @@ function Quiz() {
   const setresult = localStorage.getItem("memory")
  if(getQuestion.length === next && next>0 ){
     setShowe(true)
-    setNext(next-2)
+    setNext(next-1)
  }
   return (
     <>
