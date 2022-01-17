@@ -1,57 +1,55 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom"
+import Bool from "../bdm/bool";
 
-function QuizProp({ data, click,loading}) {
+function QuizProp({ data, click, loading, answear }) {
     const [correc, setCorrect] = useState(0)
     const [show, setShow] = useState(false)
-
+    const [rame, setRame] = useState(true)
+    const [nextBtn, setNextBtn] = useState(false)
     const clickHendler = (e) => {
 
-        if (e === true) {
-            setCorrect(correc + 1)
+        const index = data.options.indexOf(e) + 1
+
+        if (data.type === "single" && index === answear.answer) {
             setShow(true)
-        } else {
-            console.log("brt")
+            setNextBtn(true)
+            setCorrect(correc + 1)
+        } else if (data.type === "multiple" && index === answear.answer[0] ) {
+            setShow(true)
+            setNextBtn(true)
+            setCorrect(correc + 1)
+            
+        } else if(index === answear.answer[1] &&data.type === "multiple"){  
+            setCorrect(correc + 1)
+            setNextBtn(true)
+            setShow(true)
+        }else {
             setShow(false)
+            setNextBtn(true)
         }
-
-        if (data.type === "single") {
-            setTimeout(() => {
-                click()
-                setShow(false)
-            }, 800)
-        } else if (data.type === "multiple") {
-            console.log()
-            setTimeout(() => {
-                click()
-                setShow(false)
-            }, 4000)
-
-        } else if (data.type === "boolean") {
-            setTimeout(() => {
-                click()
-                setShow(false)
-            }, 1000)
-        } else {
-            click()
-        }
-
 
     }
-    
+    const nextbtn = () => {
+        click()
+        setNextBtn(true)
+        setShow(false)
+        if(data.type==='multiple'){
+            setRame(false)
+        }
+    }
     localStorage.setItem("memory", correc)
 
     return (
-        <div className="quiz">
+        <div className={`quiz ${show ? "correct" : ""}`}>
             <div className="correctAnswer">{correc}</div>
-          {loading?<><h1>{data.question}</h1>
-            <div className="answer">
-                {data.options.map(res => {
-                    return <p className={`answer-button ${show && res.correct ? "correct" : ""}`} key={res.სავარაუდოპასუხი} onClick={() => clickHendler(res.correct)}>{res.სავარაუდოპასუხი}</p>
-                })}
-            </div> </> :null
-           
-         }
+            {loading ? <><h1>{data.question}</h1>
+                <div className="answer">
+                    {rame ? data.options.map(res => {
+                        return <p className="answer-button" key={res} onClick={() => clickHendler(res)}>{res}</p>
+                    }) : <Bool loading={loading} data={data} show={show} answear={answear} />}
+                </div> </> : null
+            }
+            {nextBtn ? <button onClick={nextbtn}>next</button> : null}
         </div>
     )
 }
